@@ -282,12 +282,8 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
     <div class="ai-kpi-value">&asymp;&nbsp;290&nbsp;000</div>
     <div class="ai-kpi-label">théorèmes dans mathlib, revérifiés à chaque contribution</div>
   </div>
-  <div class="ai-kpi">
-    <div class="ai-kpi-value">un seul noyau</div>
-    <div class="ai-kpi-label">à contrôler, réimplémenté plusieurs fois de façon indépendante</div>
-  </div>
 </div>
-<div class="ai-takeaway">Produire une conjecture s'automatise. La démontrer formellement reste le point dur.</div>
+<div class="ai-takeaway">Les modèles conjecturent plus vite qu'on ne formalise.</div>
 ```
 
 ---
