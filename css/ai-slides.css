@@ -1,0 +1,324 @@
+/* ==========================================================================
+   Slides « IA » : escalier d'autonomie (developpement logiciel)
+   et deux pistes intuition / certitude (maths & Lean).
+   Chargee apres light.css : on neutralise localement les regles globales
+   du theme qui genent (ul li a 4vw de marge, p a 4vh de line-height,
+   span force en bleu, strong force a 1.4vw).
+   ========================================================================== */
+
+.reveal section.ai-slide h2 {
+    margin-bottom: 1.4vh;
+}
+
+.reveal section.ai-slide p {
+    line-height: inherit;
+    margin: 0;
+}
+
+.reveal section.ai-slide span {
+    color: inherit;
+}
+
+.reveal section.ai-slide strong {
+    font-size: inherit;
+    font-weight: 500;
+}
+
+/* --- bandeau de legende ---------------------------------------------------- */
+
+.reveal .ai-kicker {
+    margin-bottom: 1.2vh;
+    font-size: 0.95vw;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.reveal .ai-legend {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9vw;
+    font-size: 0.95vw;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 1.2vh;
+}
+
+.reveal .ai-legend-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35vw;
+    white-space: nowrap;
+}
+
+.reveal .ai-legend-key::before {
+    content: "";
+    width: 1.6vw;
+    height: 0.55vh;
+    border-radius: 0.55vh;
+    background: currentColor;
+}
+
+.reveal .ai-legend-key.is-human { color: var(--r-line-color); }
+.reveal .ai-legend-key.is-agent { color: var(--r-other-color); }
+
+/* --- escalier -------------------------------------------------------------- */
+
+.reveal .stairs {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.55vw;
+    border-bottom: 2px solid rgba(111, 168, 220, 0.4);
+}
+
+.reveal .stair {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9vh;
+    padding: 1.1vh 0.9vw 1.4vh;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-bottom: 0;
+    border-top: 0.4vh solid var(--accent);
+    border-radius: 0.4vh 0.4vh 0 0;
+    background:
+        linear-gradient(180deg, var(--wash) 0%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(0deg, var(--wash) 0%, rgba(255, 255, 255, 0.012) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.reveal .stair:nth-child(1) { height: 27vh; --accent: rgba(111, 168, 220, 0.45); --wash: rgba(111, 168, 220, 0.07); }
+.reveal .stair:nth-child(2) { height: 31vh; --accent: rgba(111, 168, 220, 0.6);  --wash: rgba(111, 168, 220, 0.09); }
+.reveal .stair:nth-child(3) { height: 38vh; --accent: rgba(111, 168, 220, 0.78); --wash: rgba(111, 168, 220, 0.11); }
+.reveal .stair:nth-child(4) { height: 45vh; --accent: rgba(111, 168, 220, 1);    --wash: rgba(111, 168, 220, 0.14); }
+.reveal .stair:nth-child(5) { height: 53vh; --accent: var(--r-other-color);      --wash: rgba(226, 168, 84, 0.16); }
+
+.reveal .stair-head {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5vw;
+}
+
+.reveal .stair-year {
+    font-family: var(--r-heading-font);
+    font-size: 1.6vw;
+    line-height: 1;
+    color: var(--r-other-color);
+}
+
+.reveal .stair-level {
+    font-size: 0.8vw;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* jauge part humaine / part agent */
+
+.reveal .stair-gauge {
+    flex: 0 0 auto;
+    display: flex;
+    height: 0.55vh;
+    border-radius: 0.55vh;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.reveal .stair-gauge i { display: block; height: 100%; }
+.reveal .stair-gauge .g-human { width: calc(100% - var(--agent)); background: var(--r-line-color); }
+.reveal .stair-gauge .g-agent { width: var(--agent); background: var(--r-other-color); }
+
+.reveal .stair-title {
+    flex: 0 0 auto;
+    font-size: 1.15vw;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.reveal .stair-body {
+    font-size: 0.95vw;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.66);
+}
+
+.reveal .stair-score {
+    flex: 0 0 auto;
+    margin-top: auto;
+    padding-top: 0.9vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--r-heading-font);
+    font-size: 1.5vw;
+    line-height: 1;
+    color: var(--r-other-color);
+    white-space: nowrap;
+}
+
+.reveal .stair-score.is-empty {
+    font-family: var(--r-main-font);
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.reveal .ai-source {
+    margin-top: 0.8vh;
+    text-align: right;
+    font-size: 0.8vw;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* --- bandeau de chiffres cles --------------------------------------------- */
+
+.reveal .ai-kpis {
+    display: flex;
+    gap: 2vw;
+    margin-top: 1.4vh;
+    padding-top: 1.4vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.reveal .ai-kpi { flex: 1 1 0; }
+
+.reveal .ai-kpi-value {
+    font-family: var(--r-heading-font);
+    font-size: 2vw;
+    line-height: 1.1;
+    color: var(--r-other-color);
+}
+
+.reveal .ai-arrow {
+    font-family: var(--r-main-font);
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.45);
+    padding: 0 0.15em;
+    vertical-align: 0.1em;
+}
+
+.reveal .ai-kpi-label {
+    font-size: 0.95vw;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.66);
+}
+
+.reveal .ai-takeaway {
+    margin-top: 1.6vh;
+    text-align: center;
+    font-size: 1.3vw;
+    line-height: 1.35;
+    color: var(--r-other-color);
+}
+
+/* --- deux pistes (intuition / certitude) ---------------------------------- */
+
+.reveal .rails { height: 61vh; }
+
+.reveal .rail {
+    display: flex;
+    align-items: center;
+    height: 28vh;
+}
+
+.reveal .rail + .rail { margin-top: 5vh; }
+
+.reveal .rail-head {
+    width: 9.5vw;
+    flex: 0 0 9.5vw;
+    padding-right: 1vw;
+    text-align: right;
+}
+
+.reveal .rail-name {
+    font-family: var(--r-heading-font);
+    font-size: 1.35vw;
+    line-height: 1.1;
+    color: var(--rail-color);
+}
+
+.reveal .rail-sub {
+    font-size: 0.85vw;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.reveal .rail-track {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+}
+
+.reveal .rail-track::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--rail-color) 0%, var(--rail-color) 82%, rgba(255, 255, 255, 0.12) 100%);
+    opacity: 0.65;
+}
+
+.reveal .rail-node {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    padding-right: 0.9vw;
+}
+
+.reveal .rail-node::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0.9vh;
+    height: 0.9vh;
+    border-radius: 50%;
+    background: var(--r-background-color);
+    border: 0.25vh solid var(--rail-color);
+    transform: translate(-50%, -50%);
+}
+
+.reveal .rail-year {
+    position: absolute;
+    bottom: 52%;
+    left: 0;
+    padding-bottom: 0.5vh;
+    font-family: var(--r-heading-font);
+    font-size: 1.25vw;
+    line-height: 1;
+    color: var(--rail-color);
+}
+
+.reveal .rail-body {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0.9vw;
+    padding-top: 0.9vh;
+}
+
+.reveal .rail-title {
+    height: 4.7vh;
+    font-size: 1vw;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.reveal .rail-text {
+    margin-top: 0.4vh;
+    font-size: 0.85vw;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.reveal .rail.is-intuition { --rail-color: var(--r-line-color); }
+.reveal .rail.is-certitude { --rail-color: var(--r-other-color); }
+
+.reveal .ai-loop {
+    height: 61vh;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 0 0;
+}

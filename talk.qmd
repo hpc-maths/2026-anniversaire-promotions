@@ -8,7 +8,9 @@ keep-tex: true
 lang: fr
 format:
   revealjs:
-    css: css/light.css
+    css:
+      - css/light.css
+      - css/ai-slides.css
     # css: css/neo-brutalism.css
 
     logo: figures/logo_blanc.svg
@@ -111,6 +113,198 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 ::::
 :::
 ::::
+
+## De l'autocomplétion à l'agent {.ai-slide}
+
+```{=html}
+<div class="ai-legend">
+  <span class="ai-legend-key is-human">part portée par l'humain</span>
+  <span class="ai-legend-key is-agent">part portée par la machine</span>
+  <span>chaque marche : ce qu'un développeur pouvait déléguer cette année-là</span>
+</div>
+<div class="stairs">
+  <div class="stair" style="--agent:8%">
+    <div class="stair-head"><span class="stair-year">2022</span><span class="stair-level">niveau 0</span></div>
+    <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
+    <div class="stair-title">Il complète la ligne</div>
+    <div class="stair-body">Copilot devine la fin du mot. ChatGPT arrive : le code se fait au copier-coller, hors du projet.</div>
+    <div class="stair-score is-empty">pas encore mesurable</div>
+  </div>
+  <div class="stair" style="--agent:20%">
+    <div class="stair-head"><span class="stair-year">2023</span><span class="stair-level">niveau 1</span></div>
+    <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
+    <div class="stair-title">Il écrit une fonction</div>
+    <div class="stair-body">GPT-4 : on décrit, il produit un bloc. Le développeur relit chaque ligne et intègre à la main.</div>
+    <div class="stair-score">&asymp; 4 %</div>
+  </div>
+  <div class="stair" style="--agent:40%">
+    <div class="stair-head"><span class="stair-year">2024</span><span class="stair-level">niveau 2</span></div>
+    <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
+    <div class="stair-title">Il lit tout le dépôt</div>
+    <div class="stair-body">Intégré à l'éditeur, il voit tout le projet et modifie plusieurs fichiers d'un coup.</div>
+    <div class="stair-score">&asymp; 49 %</div>
+  </div>
+  <div class="stair" style="--agent:68%">
+    <div class="stair-head"><span class="stair-year">2025</span><span class="stair-level">niveau 3</span></div>
+    <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
+    <div class="stair-title">Il agit</div>
+    <div class="stair-body">Il écrit, compile, lance les tests, corrige ce qui casse et ouvre la pull request sans qu'on intervienne.</div>
+    <div class="stair-score">&asymp; 75 %</div>
+  </div>
+  <div class="stair" style="--agent:85%">
+    <div class="stair-head"><span class="stair-year">2026</span><span class="stair-level">niveau 4</span></div>
+    <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
+    <div class="stair-title">Ils travaillent en flotte</div>
+    <div class="stair-body">Plusieurs agents en parallèle sur une migration ou un portage. Le développeur décide quoi faire et valide ce qui sort.</div>
+    <div class="stair-score">&gt; 80 %</div>
+  </div>
+</div>
+<div class="ai-source">SWE-bench Verified : part de tickets GitHub réels résolus sans aide. Ordre de grandeur des meilleurs modèles de chaque année</div>
+<div class="ai-kpis">
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">&asymp; 4 % <span class="ai-arrow">&rarr;</span> &gt; 80 %</div>
+    <div class="ai-kpi-label">de tickets réels que la machine résout seule</div>
+  </div>
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">minutes <span class="ai-arrow">&rarr;</span> heures</div>
+    <div class="ai-kpi-label">durée d'une tâche que l'agent mène seul</div>
+  </div>
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">écrire <span class="ai-arrow">&rarr;</span> arbitrer</div>
+    <div class="ai-kpi-label">portage GPU, refactoring, tests, documentation : la machine produit, nous décidons si c'est juste</div>
+  </div>
+</div>
+<div class="ai-takeaway">Écrire le code coûte de moins en moins cher. Vérifier ce qu'il fait coûte autant qu'avant.</div>
+```
+
+## La machine conjecture, le noyau certifie {.ai-slide}
+
+```{=html}
+<div class="ai-kicker">Depuis 2022, deux progressions séparées : les modèles qui devinent, et Lean qui vérifie.</div>
+<div class="row">
+<div class="col-8">
+<div class="rails">
+  <div class="rail is-intuition">
+    <div class="rail-head">
+      <div class="rail-name">Intuition</div>
+      <div class="rail-sub">modèles de langage</div>
+    </div>
+    <div class="rail-track">
+      <div class="rail-node">
+        <div class="rail-year">2022</div>
+        <div class="rail-body">
+          <div class="rail-title">Elle ne sait pas compter</div>
+          <div class="rail-text">ChatGPT se trompe sur une addition à trois chiffres.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2024</div>
+        <div class="rail-body">
+          <div class="rail-title">Argent à l'Olympiade</div>
+          <div class="rail-text">AlphaProof résout 4 problèmes sur 6 : à un point de la médaille d'or.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2025</div>
+        <div class="rail-body">
+          <div class="rail-title">Or, en langage naturel</div>
+          <div class="rail-text">Des modèles généralistes atteignent le niveau or, sans outil dédié.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2026</div>
+        <div class="rail-body">
+          <div class="rail-title">Problèmes ouverts</div>
+          <div class="rail-text">Elle aide sur des bornes et des problèmes d'Erdős. Le mathématicien tranche.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rail is-certitude">
+    <div class="rail-head">
+      <div class="rail-name">Certitude</div>
+      <div class="rail-sub">Lean 4 &middot; preuve vérifiée</div>
+    </div>
+    <div class="rail-track">
+      <div class="rail-node">
+        <div class="rail-year">2022</div>
+        <div class="rail-body">
+          <div class="rail-title">Liquid Tensor Experiment</div>
+          <div class="rail-text">Le défi de Peter Scholze, clos en Lean. Une preuve trop longue pour être relue.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2024</div>
+        <div class="rail-body">
+          <div class="rail-title">La preuve devient formelle</div>
+          <div class="rail-text">AlphaProof écrit ses preuves en Lean, donc la machine les vérifie elle-même.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2025</div>
+        <div class="rail-body">
+          <div class="rail-title">Une bibliothèque commune</div>
+          <div class="rail-text">Environ 100 000 théorèmes dans mathlib, recompilés à chaque changement.</div>
+        </div>
+      </div>
+      <div class="rail-node">
+        <div class="rail-year">2026</div>
+        <div class="rail-body">
+          <div class="rail-title">Formalisation assistée</div>
+          <div class="rail-text">L'agent écrit le Lean et le noyau refuse ce qui ne tient pas, ligne par ligne.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-4 align-self-center">
+<svg class="ai-loop" viewBox="0 0 380 360" role="img" aria-label="Boucle : un modèle propose une conjecture, Lean la vérifie et renvoie l'erreur localisée, jusqu'au théorème certifié">
+  <defs>
+    <marker id="ai-arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6fa8dc"/>
+    </marker>
+    <marker id="ai-arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e2a854"/>
+    </marker>
+  </defs>
+  <path d="M 2 83 H 84" fill="none" stroke="#6fa8dc" stroke-width="1.4" marker-end="url(#ai-arrow-blue)"/>
+  <path d="M 2 277 H 84" fill="none" stroke="#e2a854" stroke-width="1.4" marker-end="url(#ai-arrow-gold)"/>
+  <rect x="90" y="42" width="285" height="82" rx="4" fill="rgba(111,168,220,0.09)" stroke="#6fa8dc" stroke-width="1.6"/>
+  <text x="106" y="70" font-family="'Playfair Display', serif" font-size="21" fill="#6fa8dc">Conjecture</text>
+  <text x="106" y="92" font-family="Raleway, sans-serif" font-size="13" fill="rgba(255,255,255,0.68)">un modèle propose un énoncé</text>
+  <text x="106" y="109" font-family="Raleway, sans-serif" font-size="13" fill="rgba(255,255,255,0.68)">ou une piste de démonstration</text>
+  <rect x="90" y="236" width="285" height="82" rx="4" fill="rgba(226,168,84,0.09)" stroke="#e2a854" stroke-width="1.6"/>
+  <text x="106" y="264" font-family="'Playfair Display', serif" font-size="21" fill="#e2a854">Lean 4</text>
+  <text x="106" y="286" font-family="Raleway, sans-serif" font-size="13" fill="rgba(255,255,255,0.68)">le noyau vérifie la preuve,</text>
+  <text x="106" y="303" font-family="Raleway, sans-serif" font-size="13" fill="rgba(255,255,255,0.68)">ligne à ligne</text>
+  <path d="M 132 130 V 228" fill="none" stroke="#6fa8dc" stroke-width="1.4" marker-end="url(#ai-arrow-blue)"/>
+  <path d="M 333 230 V 132" fill="none" stroke="#e2a854" stroke-width="1.4" marker-end="url(#ai-arrow-gold)"/>
+  <text x="146" y="172" font-family="Raleway, sans-serif" font-size="13" fill="#6fa8dc">formaliser</text>
+  <text x="146" y="189" font-family="Raleway, sans-serif" font-size="13" fill="#6fa8dc">l'énoncé</text>
+  <text x="319" y="172" text-anchor="end" font-family="Raleway, sans-serif" font-size="13" fill="#e2a854">renvoie</text>
+  <text x="319" y="189" text-anchor="end" font-family="Raleway, sans-serif" font-size="13" fill="#e2a854">l'erreur</text>
+  <rect x="90" y="326" width="285" height="30" rx="15" fill="rgba(226,168,84,0.14)" stroke="rgba(226,168,84,0.5)" stroke-width="1.2"/>
+  <text x="232" y="346" text-anchor="middle" font-family="Raleway, sans-serif" font-size="15" fill="#e2a854">&#10003;&nbsp; théorème certifié</text>
+</svg>
+</div>
+</div>
+<div class="ai-kpis">
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">argent <span class="ai-arrow">&rarr;</span> or</div>
+    <div class="ai-kpi-label">à l'Olympiade internationale de mathématiques, en deux ans</div>
+  </div>
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">&asymp; 100 000</div>
+    <div class="ai-kpi-label">théorèmes formalisés dans mathlib, revérifiés à chaque commit</div>
+  </div>
+  <div class="ai-kpi">
+    <div class="ai-kpi-value">quelques milliers</div>
+    <div class="ai-kpi-label">de lignes de noyau : tout ce qu'il faut croire sur parole</div>
+  </div>
+</div>
+<div class="ai-takeaway">Un énoncé faux ne compile pas. La machine peut donc chercher vite, la preuve reste vérifiée.</div>
+```
 
 ---
 
