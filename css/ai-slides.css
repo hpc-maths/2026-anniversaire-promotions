@@ -86,11 +86,14 @@
         linear-gradient(0deg, var(--wash) 0%, rgba(255, 255, 255, 0.012) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
-.reveal .stair:nth-child(1) { height: 27vh; --accent: rgba(111, 168, 220, 0.45); --wash: rgba(111, 168, 220, 0.07); }
-.reveal .stair:nth-child(2) { height: 31vh; --accent: rgba(111, 168, 220, 0.6);  --wash: rgba(111, 168, 220, 0.09); }
-.reveal .stair:nth-child(3) { height: 38vh; --accent: rgba(111, 168, 220, 0.78); --wash: rgba(111, 168, 220, 0.11); }
-.reveal .stair:nth-child(4) { height: 45vh; --accent: rgba(111, 168, 220, 1);    --wash: rgba(111, 168, 220, 0.14); }
-.reveal .stair:nth-child(5) { height: 53vh; --accent: var(--r-other-color);      --wash: rgba(226, 168, 84, 0.16); }
+/* La hauteur des marches suit lineairement la part deleguee affichee par
+   la jauge. C'est une echelle d'illustration : aucune mesure n'y est
+   reportee, et la borne basse n'est pas zero. */
+.reveal .stair:nth-child(1) { height: 26.0vh; --accent: rgba(111, 168, 220, 0.45); --wash: rgba(111, 168, 220, 0.07); }  /* 8 % délégués */
+.reveal .stair:nth-child(2) { height: 32.7vh; --accent: rgba(111, 168, 220, 0.6); --wash: rgba(111, 168, 220, 0.09); }  /* 20 % délégués */
+.reveal .stair:nth-child(3) { height: 43.9vh; --accent: rgba(111, 168, 220, 0.78); --wash: rgba(111, 168, 220, 0.11); }  /* 40 % délégués */
+.reveal .stair:nth-child(4) { height: 59.5vh; --accent: rgba(111, 168, 220, 1); --wash: rgba(111, 168, 220, 0.14); }  /* 68 % délégués */
+.reveal .stair:nth-child(5) { height: 69.0vh; --accent: var(--r-other-color); --wash: rgba(226, 168, 84, 0.16); }  /* 85 % délégués */
 
 .reveal .stair-head {
     flex: 0 0 auto;
@@ -141,24 +144,6 @@
     color: rgba(255, 255, 255, 0.66);
 }
 
-.reveal .stair-score {
-    flex: 0 0 auto;
-    margin-top: auto;
-    padding-top: 0.9vh;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: var(--r-heading-font);
-    font-size: 1.5vw;
-    line-height: 1;
-    color: var(--r-other-color);
-    white-space: nowrap;
-}
-
-.reveal .stair-score.is-empty {
-    font-family: var(--r-main-font);
-    font-size: 0.9vw;
-    color: rgba(255, 255, 255, 0.32);
-}
-
 .reveal .ai-source {
     margin-top: 0.8vh;
     text-align: right;
@@ -201,7 +186,7 @@
 }
 
 .reveal .ai-takeaway {
-    margin-top: 1.6vh;
+    margin-top: 4vh;
     text-align: center;
     font-size: 1.3vw;
     line-height: 1.35;

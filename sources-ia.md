@@ -22,9 +22,14 @@ Consulté le 9 septembre 2026.
   <https://openai.com/index/introducing-swe-bench-verified/>
   <https://www.swebench.com/verified.html>
 
-### Les scores au bas de chaque marche
+### Les mesures, retirées du slide mais conservées ici
 
-| Slide | Valeur exacte | Système, date | Source |
+Le slide ne porte plus aucun pourcentage : il ne reste que les jauges, et la
+hauteur des marches suit linéairement la part déléguée qu'elles affichent. Le
+tableau ci-dessous garde les mesures publiées, à sortir seulement si la question
+est posée.
+
+| Marche | Valeur exacte | Système, date | Source |
 |---|---|---|---|
 | 2023 : « 2 % » | 1,96 % (SWE-bench, 2 294 tickets) | Claude 2, oct. 2023 | <https://arxiv.org/abs/2310.06770> |
 | 2024 : « 49 % » | 49,0 % (SWE-bench Verified) | Claude 3.5 Sonnet, oct. 2024 | <https://www.anthropic.com/research/swe-bench-sonnet> |
@@ -53,10 +58,15 @@ renvoie vers SWE-bench Pro, la version Verified étant jugée saturée.
 
 ### Ce qui n'est pas sourcé
 
-La jauge « conduite par le développeur / conduite par la machine » et les
-« niveaux 0 à 4 » sont une lecture personnelle, pas une mesure. Le slide le dit
-(« jauge indicative »). De même, « agents concurrents sur un même dépôt » décrit
-une pratique, sans chiffre d'adoption à l'appui.
+Le slide de gauche est désormais **entièrement qualitatif**. La jauge
+« conduite par le développeur / conduite par la machine », les « niveaux 0 à 4 »
+et la hauteur des marches sont une lecture personnelle, pas une mesure. De même,
+« agents concurrents sur un même dépôt » décrit une pratique, sans chiffre
+d'adoption à l'appui.
+
+C'est un choix assumé : les mesures existent (tableau ci-dessus) mais les
+afficher rendait le slide illisible, et le repère 2026 reposait sur un classement
+agrégé plutôt que sur une publication primaire.
 
 ## Slide 2 : mathématiques et preuve formelle
 

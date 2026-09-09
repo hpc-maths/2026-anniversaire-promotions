@@ -127,35 +127,30 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Complétion dans l'éditeur</div>
     <div class="stair-body">Copilot propose la suite du code courant. ChatGPT répond aux questions dans une fenêtre dédiée.</div>
-    <div class="stair-score is-empty">non mesuré</div>
   </div>
   <div class="stair" style="--agent:20%">
     <div class="stair-head"><span class="stair-year">2023</span><span class="stair-level">niveau 1</span></div>
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Génération sur description</div>
     <div class="stair-body">On décrit, le modèle produit un bloc. Le développeur relit et intègre lui-même.</div>
-    <div class="stair-score">2&nbsp;%</div>
   </div>
   <div class="stair" style="--agent:40%">
     <div class="stair-head"><span class="stair-year">2024</span><span class="stair-level">niveau 2</span></div>
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Contexte du dépôt entier</div>
     <div class="stair-body">Intégré à l'éditeur, le modèle lit le dépôt et modifie plusieurs fichiers.</div>
-    <div class="stair-score">49&nbsp;%</div>
   </div>
   <div class="stair" style="--agent:68%">
     <div class="stair-head"><span class="stair-year">2025</span><span class="stair-level">niveau 3</span></div>
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Boucle fermée : compiler, tester, corriger</div>
     <div class="stair-body">L'agent lance les tests, reprend ses erreurs et propose une contribution complète.</div>
-    <div class="stair-score">81&nbsp;%</div>
   </div>
   <div class="stair" style="--agent:85%">
     <div class="stair-head"><span class="stair-year">2026</span><span class="stair-level">niveau 4</span></div>
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Agents concurrents sur un même dépôt</div>
     <div class="stair-body">Le facteur limitant n'est plus la production du code, mais sa validation.</div>
-    <div class="stair-score">96&nbsp;%</div>
   </div>
 </div>
 <div class="ai-takeaway">Le code coule à flot. L'humain devient l'orchestrateur mais est-il encore le valideur ?</div>
