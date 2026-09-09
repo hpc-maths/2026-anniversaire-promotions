@@ -120,14 +120,13 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 <div class="ai-legend">
   <span class="ai-legend-key is-human">conduite par le développeur</span>
   <span class="ai-legend-key is-agent">conduite par la machine</span>
-  <span>jauge indicative ; les valeurs mesurées figurent au bas de chaque marche</span>
 </div>
 <div class="stairs">
   <div class="stair" style="--agent:8%">
     <div class="stair-head"><span class="stair-year">2022</span><span class="stair-level">niveau 0</span></div>
     <div class="stair-gauge"><i class="g-human"></i><i class="g-agent"></i></div>
     <div class="stair-title">Complétion dans l'éditeur</div>
-    <div class="stair-body">Copilot propose la suite du code courant. ChatGPT répond à côté, hors du projet.</div>
+    <div class="stair-body">Copilot propose la suite du code courant. ChatGPT répond aux questions dans une fenêtre dédiée.</div>
     <div class="stair-score is-empty">non mesuré</div>
   </div>
   <div class="stair" style="--agent:20%">
@@ -159,22 +158,7 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
     <div class="stair-score">96&nbsp;%</div>
   </div>
 </div>
-<div class="ai-source">Part de tickets GitHub réels résolus sans intervention. SWE-bench, puis SWE-bench Verified. Meilleur système publié de chaque année.</div>
-<div class="ai-kpis">
-  <div class="ai-kpi">
-    <div class="ai-kpi-value">2&nbsp;% <span class="ai-arrow">&rarr;</span> 96&nbsp;%</div>
-    <div class="ai-kpi-label">de tickets réels résolus seul, en moins de trois ans</div>
-  </div>
-  <div class="ai-kpi">
-    <div class="ai-kpi-value">1 correctif sur 5</div>
-    <div class="ai-kpi-label">accepté à tort : les jeux de tests deviennent le maillon faible</div>
-  </div>
-  <div class="ai-kpi">
-    <div class="ai-kpi-value">écrire <span class="ai-arrow">&rarr;</span> valider</div>
-    <div class="ai-kpi-label">là où se déplace le travail : portage, refactoring, tests</div>
-  </div>
-</div>
-<div class="ai-takeaway">Écrire le correctif est devenu facile. Savoir s'il est juste dépend des tests.</div>
+<div class="ai-takeaway">Le code coule à flot. L'humain devient l'orchestrateur mais est-il encore le valideur ?</div>
 ```
 
 ## Mathématiques : conjecture automatique, preuve vérifiée {.ai-slide}
@@ -252,7 +236,7 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
         <div class="rail-year">2026</div>
         <div class="rail-body">
           <div class="rail-title">Preuve formelle exigée</div>
-          <div class="rail-text">Sur des problèmes d'Erdős énoncés en Lean, les résultats restent marginaux.</div>
+          <div class="rail-text">Des problèmes d'Erdős sont énoncés en Lean ; presque rien ne passe encore.</div>
         </div>
       </div>
     </div>
@@ -304,8 +288,8 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
     <div class="ai-kpi-label">théorèmes dans mathlib, revérifiés à chaque contribution</div>
   </div>
   <div class="ai-kpi">
-    <div class="ai-kpi-value">3&nbsp;%</div>
-    <div class="ai-kpi-label">des problèmes d'Erdős ouverts démontrés en Lean</div>
+    <div class="ai-kpi-value">un seul noyau</div>
+    <div class="ai-kpi-label">à contrôler, réimplémenté plusieurs fois de façon indépendante</div>
   </div>
 </div>
 <div class="ai-takeaway">Produire une conjecture s'automatise. La démontrer formellement reste le point dur.</div>

@@ -114,17 +114,59 @@ précaution.
   <https://leanprover-community.github.io/mathlib_stats.html>
   <https://lean-lang.org/use-cases/mathlib/>
   <https://github.com/leanprover-community/mathlib4>
-- **2026, preuve formelle exigée.** FrontierMath Erdős : **68 problèmes** posés
-  ou étudiés par Erdős (65 énoncés distincts), **tous ouverts en août 2026**,
-  formulés en Lean. Le système doit produire une **preuve ou une réfutation
-  complète**, validée par Comparator, qui vérifie que la preuve démontre bien
-  l'énoncé exact avec les seuls axiomes autorisés. Budget : une tentative,
-  **300 $** et **72 h** par problème. Cinq systèmes évalués : le meilleur
-  obtient **3 %**, les autres **0 %**. Le curateur note que seuls **3 à 5**
-  problèmes d'Erdős de ce calibre avaient été résolus par une IA auparavant.
+- **2026, preuve formelle exigée.** FrontierMath Erdős : **68 problèmes**
+  posés ou étudiés par Erdős (65 énoncés distincts), **tous ouverts en août
+  2026**, formulés en Lean. Le système doit produire une **preuve ou une
+  réfutation complète**, validée par Comparator, qui vérifie que la preuve
+  démontre bien l'énoncé exact avec les seuls axiomes autorisés.
   <https://epoch.ai/benchmarks/frontiermath-erdos>
   <https://epoch.ai/latest/announcing-frontiermath-erdos>
   <https://epoch.ai/files/frontiermath-erdos.pdf>
+
+  **Le score de ce banc de mesure ne doit pas être cité.** Il figurait dans une
+  version précédente du slide sous la forme « 3 % » ; il en a été retiré. Les
+  raisons, si la question vient :
+
+  - Le banc a été **annoncé le 1er septembre 2026**, huit jours avant la
+    rédaction de ces notes.
+  - Cinq systèmes évalués (GPT-6 Astra, GPT-5.6 Sol, GPT-5.5, Claude Fable 5.1,
+    Claude Fable 5), **une seule tentative** par problème, sous plafond de
+    **300 $ et 72 h**. Seul GPT-6 Astra marque, les quatre autres sont à zéro.
+  - Les « 3 % » correspondent à **2 problèmes résolus sur 68** (les problèmes 74
+    et 126). Sur un tel effectif, l'intervalle de confiance à 95 % (Wilson) va
+    de **0,8 % à 10,1 %** : un facteur douze. Le chiffre ne distingue rien.
+  - Le résultat dépend directement du budget : **hors protocole, avec un budget
+    élargi, le même modèle résout 5 problèmes**, soit 7,4 %. Desserrer le
+    plafond multiplie par 2,5 le nombre de problèmes résolus.
+  - Epoch AI met elle-même en garde : la formalisation ajoute une charge propre,
+    la contamination par les solutions publiées va croître avec le temps, et
+    « les problèmes d'Erdős, ce n'est pas toute la mathématique ».
+  - Enfin, les énoncés ont été retenus **parce qu'ils sont ouverts**. Un score
+    bas est une propriété de la construction du banc, pas la mesure d'un
+    plafond de capacité.
+
+  Ce qui reste dicible : sur des énoncés réellement ouverts et formalisés, les
+  systèmes actuels ne produisent presque rien. C'est une observation
+  qualitative, à ne pas chiffrer.
+
+  Repère indépendant plus solide, donné par le curateur du banc : avant celui-ci,
+  seuls **3 à 5** problèmes d'Erdős de ce calibre avaient été résolus avec l'aide
+  d'une IA.
+
+### Ce qui porte l'idée que la preuve formelle reste le point dur
+
+Trois éléments, indépendants du banc Erdős :
+
+- En 2024, les énoncés de l'OIM ont dû être **traduits en Lean par des experts**
+  avant qu'AlphaProof puisse travailler.
+  <https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/>
+- En 2025, la médaille d'or a été obtenue **en langage naturel**, pas par la voie
+  formelle : le meilleur résultat olympique vient précisément de l'abandon de la
+  formalisation.
+  <https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/>
+- Epoch AI écrit que « la formalisation ajoute une charge supplémentaire pour les
+  systèmes d'IA », au-delà de la résolution du problème mathématique.
+  <https://epoch.ai/latest/announcing-frontiermath-erdos>
 
 ### Le noyau de Lean
 
