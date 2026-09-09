@@ -30,7 +30,7 @@ resources:
   - videos/**
   - css/fonts/**
 highlight-style: github
-footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/by-sa.png"/> 27 septembre 2025
+footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/by-sa.png"/> 12 septembre 2026
 ---
 
 <!-- ::: {.hidden}
