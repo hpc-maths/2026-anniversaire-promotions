@@ -114,6 +114,26 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 :::
 ::::
 
+---
+
+:::{.center-page}
+![](figures/qubit.png)
+:::
+
+## {.center data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%"}
+
+::::{.row}
+
+:::{.col-6}
+:::
+
+:::{.col-6 .p-5}
+Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition.
+
+L’expertise demandée est devenue complexe et les choix nombreux.
+:::
+::::
+
 ## Développement logiciel : de la complétion à l'agent {.ai-slide}
 
 ```{=html}
@@ -285,26 +305,6 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 </div>
 <div class="ai-takeaway">Les modèles conjecturent plus vite qu'on ne formalise.</div>
 ```
-
----
-
-:::{.center-page}
-![](figures/qubit.png)
-:::
-
-## {.center data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%"}
-
-::::{.row}
-
-:::{.col-6}
-:::
-
-:::{.col-6 .p-5}
-Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition.
-
-L’expertise demandée est devenue complexe et les choix nombreux.
-:::
-::::
 
 ## Evolution des méthodes mathématiques
 

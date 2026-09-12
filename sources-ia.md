@@ -9,6 +9,12 @@ Consulté le 9 septembre 2026.
 
 ## Slide 1 : développement logiciel
 
+### Discours
+
+Une autre évolution majeure dans nos métiers que ce soit au niveau du développement logiciel ou au niveau des mathématiques est l'explosion des capacités de l'IA.
+
+Sur ce premier slide, vous avez l'évolution de l'usage de l'IA dans le développement logiciel. Vous pouvez voir où nous en sommes en seulement 4 ans. Vous avez une jauge en haut de chaque brique qui indique la part du travail fait par l'humain et celle par l'IA. C'est notre propre lecture et non des chiffres réels. Vous pouvez voir que l'IA prend une part de plus en plus importante dans l'écriture de code et que l'humain devient orchestrateur. Tout a commencé en 2022. Copilot vous permettait d'avoir de la complétion automatique et ChatGPT vous permettait de poser des questions Mais les codes proposés par chatGPT étaient de très mauvaises qualités. Les modèles sont devenus ensuite plus intelligents mais ce qui a réellement changé la donne est le fait qu'ils puissent interagir avec le système et donc avoir une meilleure compréhension de ce que vous essayez de faire. Les interactions sont par exemple lire vos fichiers, faire des recherches sur le web ou regarder des interfaces web en utilisant des modèles visuels et pouvoir être capable de réagencer les boutons pour une meilleure ergonomie. Un agent peut maintenant travailler en toute autonomie: compiler le code, lancer les tests, ouvrir une PR sur github et vous informer lorsque l'intégration continue est verte. Aujourd'hui, nous avons des hordes d'agents qui travaillent sur un ensemble de fonctionnalités en parallèle. L'humain devient orchestrateur et relecteur avec des milliers de lignes de codes à relire. La façon de travailler change.
+
 ### Le banc de mesure
 
 - **SWE-bench** (oct. 2023) : 2 294 tickets GitHub réels tirés de 12 dépôts
@@ -69,6 +75,14 @@ afficher rendait le slide illisible, et le repère 2026 reposait sur un classeme
 agrégé plutôt que sur une publication primaire.
 
 ## Slide 2 : mathématiques et preuve formelle
+
+### Discours
+
+Pour les mathématiques les progrès sont similaires. Au tout début les modèles étaient incapables de résoudre des problèmes mathématiques simples et au fil du temps, grâce à leur amélioration, ils ont réussi à résoudre des problèmes basiques puis des problèmes beaucoup plus complexes. Cela ne vient pas uniquement du modèle en lui-même, c'est également la conjonction avec lean qui permet de formaliser les mathématiques et qui permet également au modèle de vérifier sa réflexion pour résoudre ses problèmes. En 2024, les énoncés des olympiades sont écrit en Lean ce qui a permis au modèle d'obtenir l'argent. Un an plus tard, Gemini arrive à obtenir l'or en langage naturel.
+Où en sommes nous aujourd'hui ? Le modèle propose un énoncé et une démonstration en langage naturel, on la formalise en Lean, le noyau la type-vérifie, et surtout il rejette et localise ce qui est erroné. La confiance ne repose ni sur le modèle ni sur son automatisation, elle repose sur un tout petit noyau.
+
+Là où ça coince, c'est la dernière case en bas. Dès qu'on exige la preuve formelle complète sur des problèmes réellement ouverts, les problèmes d'Erdős écrits en Lean par exemple, les meilleurs systèmes ne produisent presque rien. Les modèles conjecturent plus vite qu'on ne formalise. Ce qui rejoint ce qui a été observé pour le code. Les modèles peuvent fournir des textes de millions de ligne très rapidement. Il y a toujours cette phase de vérification humaine qui ralentit le processus.
+
 
 ### Piste « Production » (modèles de langage)
 
