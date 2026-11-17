@@ -1,0 +1,580 @@
+---
+title: "HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications"
+author:
+  name: Loïc Gouarin, Marc Massot
+date: 16 novembre 2026
+date-format: long
+keep-tex: true
+lang: fr
+format:
+  revealjs:
+    css:
+      - css/light.css
+      - css/ai-slides.css
+    # css: css/neo-brutalism.css
+
+    logo: figures/logo_blanc.svg
+    # slide-number: true
+
+    width: "100%"
+    height: "100%"
+    margin: 0.1
+    # min-scale: 0.2
+    # max-scale: 2.0
+    # center: true
+
+    html-math-method:
+        method: mathjax
+        url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+resources:
+  - videos/**
+  - css/fonts/**
+highlight-style: github
+footer: Réunion DotBlocks <img class="video-responsive-5" src="figures/by-sa.png"/> 16 novembre 2026
+---
+
+<!-- ::: {.hidden}
+\DeclareMathOperator{\N}{\mathcal{N}}
+\newcommand{\test}{f_{\text{test}}}
+\renewcommand{\phi}{\varphi}
+::: -->
+
+```{=html}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-8 .text-center }
+![](figures/hpc-explain.svg){width="60%"}
+::::
+::::{.col-4 .align-self-center .border .fragment .border-2}
+
+:::{.color-0}
+**Plan**
+:::
+
+- Évolution des architectures, des mathématiques et des algorithmes
+- Innovation scientifique et technologique : illustrations
+- L’Initiative HPC@Maths et son impact à l’X
+
+::::
+
+:::
+::::
+
+---
+
+## {.center data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%"}
+
+::::{.row}
+
+:::{.col-6}
+:::
+
+:::{.col-6 .p-5}
+Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition.
+
+L’expertise demandée est devenue complexe et les choix nombreux.
+:::
+::::
+
+## Evolution des méthodes mathématiques
+
+:::{.row}
+::::{.col}
+**Progression parallèle à la loi de Moore**
+
+- Un exemple : résolution de système linéaires creux
+- Illustration issue d’une réflexion de la société SIAM en 2001 sur le domaine émergeant “Computational Science and Engineering”
+- Valable jusque vers 2005 puis saturation progressive sur les sujets “classiques” de la discipline
+
+:::{.fragment fragment-index=0}
+**Emergence de nouvelles approches**
+
+- Depuis 2010 changements de paradigmes et solutions innovantes en analyse numérique → ruptures
+- HPC : simuler des problèmes de tailles importante sur des architectures classiques (génie biomédical)
+- Exemple : adaptation en temps et en espace (sép. d’opérateur pour intégrer la dynamique en temps) et contrôle d’erreur
+:::
+
+<br>
+
+:::{.fragment .text-center .color-0 fragment-index=0}
+**Passage à un nouveau chapitre de l’analyse numérique depuis 2010 **
+:::
+
+::::
+::::{.col-5 .r-stack .text-center}
+:::{.fragment fragment-index=0 .fade-out}
+![Source SIAM Review 2001](figures/comp_algo_hard.jpg){width=80%}
+:::
+:::{.fragment fragment-index=0 .current-visible}
+![PhD Max Duarte (2011)](figures/acc_rej_steps_ign_eps3.jpg){width=80% .video-responsive-30}
+
+<video class="video-responsive-30" data-autoplay loop src="videos/ignition_Re1000.mov" />
+:::
+::::
+:::
+
+## Innovation
+
+:::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-7 .align-self-center}
+Se situe à l’interconnection entre :
+
+::: {.nonincremental}
+- Contribution aux nouvelles approches mathématiques, émergence
+:::
+::: {.nonincremental}
+- Nouvelles architectures de calcul et techniques d’implémentation
+:::
+::: {.fragment fragment-index=1}
+- **Enjeux de l’innovation scientifique et technologique = réseau de collab. avec d’autres disciplines et entreprises**
+:::
+::::
+::::{.col}
+:::{.r-stack}
+![](figures/logiciel_two.png)
+
+![](figures/logiciel.png){.fragment fragment-index=1}
+:::
+::::
+:::
+:::::
+
+---
+
+:::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-3 .align-self-center .text-center}
+![](figures/diphasique_3.png){.video-responsive-25}
+
+![](figures/diphasique_4.png){.video-responsive-25}
+::::
+::::{.col .align-self-center .p-4 .border}
+
+:::{.text-center .color-0 .h1 .display-5}
+Écoulements diphasiques multi-échelles
+:::
+
+</br>
+
+:::{.text-center  .color}
+**Simulation prédictive des phénomènes physiques**
+
+**sur les nouvelles architectures de calcul**
+:::
+
+</br>
+
+- Modélisation mathématique innovante
+- Méthodes numériques de nouvelle génération
+- Développement de code de calcul open-source efficace
+
+</br>
+
+:::{.text-center .color-0 .h1 .display-5}
+Conception - sécurité - efficacité
+:::
+
+::::
+::::{.col-3 .align-self-center .text-center}
+![](figures/diphasique_1.png){.video-responsive-25}
+
+![](figures/diphasique_2.png){.video-responsive-25}
+::::
+:::
+:::::
+
+---
+
+:::{.center-page}
+![Source : Prof. T. Bowman - Stanford Univ.](figures/diphasique_1.png){width=60%}
+:::
+
+## Brouillard de gouttelettes : traité !
+
+:::::{.center-page-vertically-2}
+:::{.row .align-items-center}
+::::{.col-8 }
+**Brouillards de gouttes polydispersés**
+
+- Simulation prédictive de la dynamique des brouillards et de leur évaporation → Structure et dynamique de flamme
+
+:::{.color}
+**Combustion**
+:::
+
+- Propulsion liquide, solide, Booster Ariane : couplage combustion / acoustique / brouillard polydispersé (instab. thermo-acoustiques)
+
+**Turbulence gaz-gouttes fortement couplée**
+
+- Nouvelle approche aux grandes échelles - ondelettes à divergence nulle
+
+</br>
+
+:::{.text-center .color-0 .h1}
+Nouvelle génération de modèles fluides et méthodes numériques précises et efficaces - HPC
+:::
+
+::::
+::::{.col .align-self-center .text-center}
+![](figures/diphasique_1.png){.video-responsive-25}
+
+<video class="video-responsive-30" data-autoplay loop src="videos/y1_y3_3d.m4v">
+</video>
+
+::::::{.row}
+:::::::{.col .text-center}
+![](figures/em2c.jpg){.video-responsive-10}
+:::::::
+:::::::{.col .text-center}
+![](figures/Seal_of_Leland_Stanford_Junior_University.svg){.video-responsive-10}
+:::::::
+:::::::{.col .text-center}
+![](figures/onera.svg){.video-responsive-10}
+:::::::
+::::::
+::::
+:::
+:::::
+
+## Atomisation - modèle unifié - rupture !
+
+:::::{.center-page-vertically-2}
+:::{.row}
+::::{.col .border .align-self-center}
+
+:::{.text-center}
+**Modèles classiques**
+:::
+
+</br>
+
+Régime ***phases séparées***
+
+- Modèles eulériens de mélange bi-fluide avec fraction volumique $\alpha$
+- Faible information sur la géométrie de l’interface ($\alpha$, $\nabla \alpha$) - maillage
+
+</br>
+
+Régime ***phases dispersées***
+
+- Modèles eulériens aux moments
+- Haute information sur la géométrie de l’interface avec la distribution en taille de gouttelettes ($\alpha$, $\Sigma$, $H$, $G$)
+
+</br>
+
+:::{.color-0}
+**Thèse A. Loison, W. Haegeman**
+
+**Post-doc G. Orlando**
+:::
+::::
+::::{.col .text-center .align-self-center}
+![](figures/injection.png){.video-responsive-30}
+
+<video class="video-responsive-30" data-autoplay loop src="videos/droplets-collision-3x.mp4">
+</video>
+::::
+::::{.col .border .align-self-center}
+
+:::{.text-center .color-0}
+**Modèle unifié à deux échelles**
+:::
+
+</br>
+
+:::{.border .p-1}
+::::{.color-0}
+***Grande échelle***
+::::
+
+- Modèles eulériens de mélange bi-fluide toute topologie avec fraction volumique $\alpha$
+:::
+
+</br>
+
+:::{.text-center .fs-3 .border .rounded-pill }
+Transfert inter-échelle
+
+::::{.fs-5 .small-lh}
+Atomisation primaire, coalescence
+
+géométrie de l’interface via ($\alpha$, $\nabla \alpha$)
+::::
+:::
+
+</br>
+
+:::{.border .p-1 .m-2}
+::::{.color-0}
+***Petite échelle***
+::::
+
+Modèle de gouttelettes oscillantes base sur  ($\alpha^d$, $\Sigma$, $H$, $G$ + variables dynamiques)
+
+- Géométrie différentielle / modèles cinétiques
+:::
+::::
+:::
+:::::
+<!-- {{< include diphasique.qmd >}} -->
+
+## Atomisation - modèle unifié - simulation
+
+:::{.text-center}
+<video class="video-responsive-40" data-autoplay loop src="videos/large_scale_small_scale_adaptive_contours.mp4" />
+:::
+
+:::{.text-center}
+<video class="video-responsive-40" data-autoplay loop src="videos/large_scale_small_scale_adaptive_finale.mp4"/>
+:::
+
+## Méthode Boltzmann sur réseau
+
+:::{.row}
+::::{.col-8}
+**Contexte**
+
+- Simulation haute performance du bruit d’un train d'atterrissage (NASA Ames Advanced Supercomputing Division - Launch Ascent and Vehicle Aerodynamics LAVA) 2,28 milliards de degrés de liberté - 12 niveaux
+- Simulation sur machine Pleiades (2800 coeurs - deux semaines) Accélération d’un facteur 15 par rapport aux techniques classiques
+
+**Rupture : Thèse Thomas Bellotti **
+
+- Analyse numérique des méthodes (consistance / stabilité)
+- Implémentation dans samurai : résolution de plusieurs décades de questions qui se posaient sur l’utilisation de maillages adaptés
+
+</br>
+
+:::{.text-center .color-0}
+**Rupture et innovation : simulation plus précise et plus performante**
+:::
+
+</br>
+
+Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de la Société de Mathématiques Appliquées et Industrielles GAMNI 2024
+
+::::
+::::{.col .text-center .align-self-center}
+<video class="video-responsive-30" data-autoplay loop src="videos/LBM_Landing_Gear_NASA_compressed.mp4">
+</video>
+
+</br>
+
+:::{.row}
+::::{.col-8}
+<video class="video-responsive-30" data-autoplay loop src="videos/config_12_2_9_1e-3.mp4">
+</video>
+
+::::
+
+::::{.col .align-self-center}
+![](figures/esa-6.svg)
+
+</br>
+
+![](figures/cenaero.png)
+::::
+:::
+::::
+:::
+
+## Samurai
+
+:::{.row}
+::::{.col-8}
+**Outil pour un ensemble d’applications**
+
+- Physique des plasmas (propulsion électrique, prédiction du temps solaire, electron transpiration cooling…)
+- Écoulements diphasiques (propulsion liquide, propulsion aéronautique, moteurs à injection directe, chasse au lancement d’un missile)
+- Simulation numérique directe des piles au lithium
+
+<br>
+
+**Innovation**
+
+- Nouvelle structure de données basée sur une algèbre d’ensembles
+- Facilité d'implémentation de nouveaux schémas (indépendant de la gestion dynamique du maillage) permettant de créer un écosystème pour les applications
+
+<br>
+<br>
+
+:::{.text-center .color-0}
+**Code communautaire Open Source**
+
+[https://github.com/hpc-maths/samurai](https://github.com/hpc-maths/samurai)
+
+**Même code pour les deux applications présentées**
+:::
+
+::::
+::::{.col .text-center}
+
+:::{.row }
+::::{.col .align-self-center}
+![](figures/256px-NASA_logo.png)
+::::
+::::{.col .align-self-center}
+![](figures/esa-6.svg){width=80%}
+::::
+:::
+
+:::{.row }
+::::{.col .align-self-center}
+![](figures/Quantstack_logo.svg)
+::::
+::::{.col .align-self-center}
+![](figures/totalenergies-1.svg){width=60%}
+::::
+:::
+
+:::{.row }
+::::{.col .align-self-center}
+![](figures/logo_dga.svg){width=30%}
+::::
+::::{.col .align-self-center}
+![](figures/vki_logo.webp)
+::::
+:::
+:::{.row }
+::::{.col .align-self-center}
+![](figures/128px-LOGO_CEA_ORIGINAL_2022.svg.png){width=15%}
+::::
+:::
+
+<br>
+
+![](figures/dark_logo_samurai.png){width=80%}
+::::
+:::
+## HPC@Maths
+
+:::{.center-page}
+![](figures/actions.svg){width=80%}
+
+<br>
+
+::::{.color-0}
+**Mise en place depuis 2017 avec l’aide de la Fondation de l’X**
+
+**Impact important sur l’écosystème enseignement-recherche à l’X**
+::::
+:::
+
+## Mésocentre de Calcul et de données {data-background-image="figures/serveurs.png" data-background-position="right" data-background-size="40%"}
+
+**Ecole polytechnique - IP Paris**
+
+::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-6 .align-self-center}
+- Opérationnel depuis l'été 2021
+- 2000 coeurs de calcul pour la communauté des laboratoires initiateurs
+- Montée en puissance à 3000 coeurs et nouveaux partenaires
+- Communauté autour des méthodes numériques de nouvelle génération et leur implémentation
+- “Computational Science” - Collaboration interdisciplinaire
+::::
+:::
+::::
+
+## {data-background-image="figures/foret.png" data-background-position="left" data-background-size="40%"}
+
+:::{.row}
+::::{.col}
+::::
+::::{.col-7}
+<h2>Création de l’Unité de Service IDCS</h2>
+
+- Créée en mai 2020 à l’École polytechnique
+- Inspirée de ce qui se fait dans les grandes universités (Stanford, EPFL)
+- Ensemble d’ingénieurs ASR et CALCUL en soutien aux grands projets d’infrastructures informatiques de l’École et IP Paris
+- Réactivité sur évolution des infrastructures et Data Center - Soutien à la communauté
+- Vocation à devenir une Unité d’Appui à la Recherche (CNRS)
+
+<br>
+
+:::{.text-center .mt-5 .color-0}
+**Effort important mené avec succès sur ces réalisations**
+
+**avec un fort soutien de l’École polytechnique / IPP**
+
+<br>
+
+**Initiative HPC@Maths a eu un rôle clef**
+:::
+::::
+:::
+
+## Enseignement
+
+:::{.center-page}
+![](figures/parcours.svg){width=90%}
+
+<br>
+
+::::{.color-0}
+**Formation mise en place - interaction avec PME & Développement Pédagogie**
+::::
+:::
+
+
+## Conclusion
+
+:::{.row}
+::::{.col-7 .align-self-center}
+**Positionnement pertinent au coeur de l’innovation**
+
+- Expertise Mathématique (CMAP)
+- Expertise Informatique (Groupe d’ingénieurs de recherche experts en calcul - développeurs)
+- Réseau de collaborations sur les divers axes scientifiques et entreprises
+- Production de logiciels open-source
+
+**Création d’un écosystème - École et IP Paris**
+
+**Projet en forte progression**
+::::
+::::{.col}
+![](figures/logiciel.png){width=80%}
+::::
+:::
+:::{.text-center .color-0 .align-self-end .mt-5}
+**Rendu possible grâce au soutien de la Fondation**
+:::
+
+## Remerciements
+
+**Etudiants, ingénieurs et collaborateurs**
+
+- Doctorants et post-doctorants
+- Ingénieurs Calcul, Valorisation et Project Manager
+- Collaborateurs au sein du CMAP et ailleurs
+- Collaborateurs industriels, PME, startup
+
+**Ecole polytechnique - IP Paris**
+
+- CMAP
+- Unité IDCS
+- Pôle teaching and learning center
+
+**Fondation de l’X**
+
+- Direction de campagne
+- Toute l’équipe de la Fondation
+- Grand donateur pour son écoute, son soutien et ses conseils
+
+##
+
+:::::{.center-page}
+
+<br>
+
+<h4>Merci pour votre attention</h4>
+
+<br>
+[HPC@Maths](https://hpc-maths.github.io/)
+:::::
+
+<!-- {{< include propulsion_electrique.qmd >}} -->
